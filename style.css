@@ -1,0 +1,308 @@
+/* Importando a fonte */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+
+/* Estilos Gerais*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #000000;
+    padding: 10px;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: right;
+    background-color: #000000;
+    border-radius: 0.5rem;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 100%;
+}
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+}
+.list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+#toggler,
+.navbar label {
+    display: none;
+    font-size: 2.5em;
+}
+@media screen and (max-width: 600px) {
+    .menu {
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+    .list {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .navbar label {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    #toggler:checked ~ .menu {
+        max-height: 100%;
+    }
+}
+ 
+/* Animação no Link da Navbar */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+nav {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+.link {
+    position: relative;
+    display: inline-block;
+}
+.link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 4px;
+    scale: 0 1;
+    transform-origin: left;
+    transition: scale 0.25s;
+}
+.link:hover::before {
+    scale: 1;
+}
+/* Animações da seção Sobre mim*/
+.about-post {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 20px;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #233E33;
+    padding: 2.5rem;
+    box-shadow: 0 1.4rem 8rem
+    rgba(0, 0, 0, 0.2);
+    border-radius: 0.8rem;
+}
+.about-post_img {
+    position: relative;
+    min-width: 30rem;
+    max-width: 30rem;
+    margin-left: 120px;
+    height: 30rem;
+    transform: translateX(-8rem);
+}
+.about-post_img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.8rem;
+}
+.about-post_img::before {
+    content: "";
+    position: absolute;
+    object-fit:fill;
+    inset: 0;
+    border-radius: 0.8rem;
+    opacity: 0.5;
+}
+.about-post_title {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 2rem;
+    margin-top: -60px;
+    text-transform: uppercase;
+    color: #fff;
+}
+.about-post_info p{
+    margin-bottom: 5rem;
+    color: rgb(255, 255, 255);
+}
+.about-post_cta {
+    display: inline-block;
+    background-image: linear-gradient(to right, #1f2327 0% #606972 100%);
+    padding: 1.5rem 3rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 0.8rem;
+}
+.about-post_cta:hover {
+    background-image: linear-gradient(to right, #1f2327 0% #606972 100% );
+}
+@media (max-width: 1068px) {
+    .about-post {
+        max-width: 80rem;
+    }
+    .about-post_img {
+        min-width: 30rem;
+        max-width: 30rem;
+    }
+}
+@media (max-width: 1000px) {
+    .about-post {
+        max-width: 70rem;
+    }
+}
+@media (max-width: 900px) {
+    .about-post {
+        padding: 2.5rem;
+        flex-direction: column;
+    }
+    .about-post_img {
+        min-width: 80%;
+        margin-left: 20px;
+        margin-top: 100px;
+        transform: translate(0, -8rem);
+    }
+}
+
+/* Links Follow-me footer*/
+.nav:hover {
+  pointer-events: auto;
+}
+.sm-header {
+  font-size: 1.6rem;
+  margin-left: 20%;
+  text-transform: uppercase;
+  color: #fff;
+ 
+}
+.line {
+  width: 20rem;
+  height: 5px;
+  background-color: #fff;
+  margin-left: 2rem;
+  
+  transform: scaleX(0.2);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+.nav:hover .line {
+  transform: scaleX(1);
+}
+.nav-list {
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+}
+.nav-item {
+  margin: 0;
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
+.nav-item:nth-child(odd) {
+  transform: translateY(5rem);
+}
+.nav-item:nth-child(even) {
+  transform: translateY(-5rem);
+}
+.nav:hover .nav-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+.nav-link {
+    font-size: 3.6rem;
+}
+
+/* Button da pagina principla */
+
+button {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgb(255, 255, 255);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #233E33;
+    box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  
+  button:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+  }
+  
+  button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  button:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
